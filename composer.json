@@ -1,0 +1,24 @@
+{
+    "name": "gibbs/php-windows-base-dir",
+    "description": "Microsoft Windows base directories and folder paths",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "WindowsBaseDir\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dan Gibbs",
+            "email": "dev@dangibbs.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8.0|~9.0"
+    }
+}
