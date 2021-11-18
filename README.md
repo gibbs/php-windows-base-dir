@@ -1,9 +1,19 @@
 # PHP Windows Base Directory
 
+![Tests](https://github.com/gibbs/php-windows-base-dir/actions/workflows/test.yml/badge.svg)
+
 A library to return various Microsoft Windows directory/folder paths based on 
 runtime environment variables.
 
-## Usage
+## Install
+
+Install via composer with;
+
+```bash
+composer require gibbs/php-windows-base-dir
+```
+
+## Usage Examples
 
 ```php
 $wbd = new WindowsBaseDir\Wbd;
