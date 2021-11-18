@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  phpunit73:
+    name: PHP 7.3 Test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.3'
+          tools: composer:v2
+        env:
+          phpts: ts
+      - name: Composer Install
+        run: |
+          rm composer.lock
+          cp phpunit.dist.xml phpunit.xml
+          composer install
+          .\vendor\bin\phpunit
