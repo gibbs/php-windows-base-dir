@@ -20,9 +20,31 @@ jobs:
           tools: composer:v2
         env:
           phpts: ts
-      - name: Composer Install
+      - name: Composer Setup
         run: |
           rm composer.lock
-          cp phpunit.dist.xml phpunit.xml
           composer install
+      - name: PHPUnit Test
+        run: |
+          cp phpunit.dist.xml phpunit.xml
+          .\vendor\bin\phpunit
+
+  phpunit80:
+    name: PHP 8.0 Test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          tools: composer:v2
+        env:
+          phpts: ts
+      - name: Composer Setup
+        run: |
+          rm composer.lock
+          composer install
+      - name: PHPUnit Test
+        run: |
+          cp phpunit.dist.xml phpunit.xml
           .\vendor\bin\phpunit
