@@ -2,11 +2,11 @@
 
 class WbdTest extends \PHPUnit\Framework\TestCase
 {
-    private $wdb;
+    private $wbd;
 
     public function setUp(): void
     {
-        $this->wdb = new WindowsBaseDir\Wbd;
+        $this->wbd = new WindowsBaseDir\Wbd;
     }
 
     private function checkValidReturnType($value = null): bool
@@ -16,7 +16,7 @@ class WbdTest extends \PHPUnit\Framework\TestCase
 
     public function testGetAllPaths() : void
     {
-        $paths = $this->wdb->getAllPaths();
+        $paths = $this->wbd->getAllPaths();
 
         $this->assertIsArray($paths);
         $this->assertArrayHasKey('local_app_data', $paths);
@@ -25,7 +25,7 @@ class WbdTest extends \PHPUnit\Framework\TestCase
 
     public function testGetAllEnvironmentPaths() : void
     {
-        $paths = $this->wdb->getAllEnvironmentPaths();
+        $paths = $this->wbd->getAllEnvironmentPaths();
 
         $this->assertIsArray($paths);
         $this->assertArrayHasKey('LOCALAPPDATA', $paths);
@@ -34,189 +34,189 @@ class WbdTest extends \PHPUnit\Framework\TestCase
 
     public function testGetAllUsersProfilePath(): void
     {
-        $path = $this->wdb->getAllUsersProfilePath();
+        $path = $this->wbd->getAllUsersProfilePath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetAppDataPath(): void
     {
-        $path = $this->wdb->getAppDataPath();
+        $path = $this->wbd->getAppDataPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetCommonProgramFilesPath(): void
     {
-        $path = $this->wdb->getCommonProgramFilesPath();
+        $path = $this->wbd->getCommonProgramFilesPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetCommonProgramFilesX86Path(): void
     {
-        $path = $this->wdb->getCommonProgramFilesX86Path();
+        $path = $this->wbd->getCommonProgramFilesX86Path();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetComSpecPath() : void
     {
-        $path = $this->wdb->getComSpecPath();
+        $path = $this->wbd->getComSpecPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetHomeDrive() : void
     {
-        $path = $this->wdb->getHomeDrive();
+        $path = $this->wbd->getHomeDrive();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetHomeDrivePath() : void
     {
-        $path = $this->wdb->getHomeDrivePath();
+        $path = $this->wbd->getHomeDrivePath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetHomePath() : void
     {
-        $path = $this->wdb->getHomePath();
+        $path = $this->wbd->getHomePath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetLocalAppDataPath() : void
     {
-        $path = $this->wdb->getLocalAppDataPath();
+        $path = $this->wbd->getLocalAppDataPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetLogonServerPath() : void
     {
-        $path = $this->wdb->getLogonServerPath();
+        $path = $this->wbd->getLogonServerPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetPath(): void
     {
-        $path = $this->wdb->getPath();
+        $path = $this->wbd->getPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetPathEx(): void
     {
-        $path = $this->wdb->getPathExt();
+        $path = $this->wbd->getPathExt();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetProgramDataPath(): void
     {
-        $path = $this->wdb->getProgramDataPath();
+        $path = $this->wbd->getProgramDataPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetProgramFilesPath(): void
     {
-        $path = $this->wdb->getProgramFilesPath();
+        $path = $this->wbd->getProgramFilesPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetProgramFilesX86Path(): void
     {
-        $path = $this->wdb->getProgramFilesX86Path();
+        $path = $this->wbd->getProgramFilesX86Path();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetSystemDrivePath(): void
     {
-        $path = $this->wdb->getSystemDrivePath();
+        $path = $this->wbd->getSystemDrivePath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetSystemRootPath(): void
     {
-        $path = $this->wdb->getSystemRootPath();
+        $path = $this->wbd->getSystemRootPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetTempPath(): void
     {
-        $path = $this->wdb->getTempPath();
+        $path = $this->wbd->getTempPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetUserDomain(): void
     {
-        $path = $this->wdb->getUserDomain();
+        $path = $this->wbd->getUserDomain();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetUserDomainRoaminProfile(): void
     {
-        $path = $this->wdb->getUserDomainRoaminProfile();
+        $path = $this->wbd->getUserDomainRoaminProfile();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetUsername(): void
     {
-        $path = $this->wdb->getUsername();
+        $path = $this->wbd->getUsername();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetUserProfilePath(): void
     {
-        $path = $this->wdb->getUserProfilePath();
+        $path = $this->wbd->getUserProfilePath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetWindirPath(): void
     {
-        $path = $this->wdb->getWindirPath();
+        $path = $this->wbd->getWindirPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetPublicPath(): void
     {
-        $path = $this->wdb->getPublicPath();
+        $path = $this->wbd->getPublicPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetOneDrivePath(): void
     {
-        $path = $this->wdb->getOneDrivePath();
+        $path = $this->wbd->getOneDrivePath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetDriverDataPath(): void
     {
-        $path = $this->wdb->getDriverDataPath();
+        $path = $this->wbd->getDriverDataPath();
 
         $this->assertTrue($this->checkValidReturnType($path));
     }
 
     public function testGetEnvironment(): void
     {
-        $environment = $this->wdb->getEnvironment();
+        $environment = $this->wbd->getEnvironment();
 
         $this->assertTrue(strlen($environment) === 3);
     }

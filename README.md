@@ -9,17 +9,17 @@ runtime environment variables.
 $wbd = new WindowsBaseDir\Wbd;
 
 // Print various paths
-echo $wdb->getCommonProgramFilesPath();
-echo $wdb->getCommonProgramFilesX86Path();
-echo $wdb->getHomeDrivePath();
-echo $wdb->getProgramDataPath();
-echo $wdb->getProgramFilesPath();
-echo $wdb->getSystemDrivePath();
-echo $wdb->getSystemRootPath();
-echo $wdb->getTempPath();
+echo $wbd->getCommonProgramFilesPath();
+echo $wbd->getCommonProgramFilesX86Path();
+echo $wbd->getHomeDrivePath();
+echo $wbd->getProgramDataPath();
+echo $wbd->getProgramFilesPath();
+echo $wbd->getSystemDrivePath();
+echo $wbd->getSystemRootPath();
+echo $wbd->getTempPath();
 
-if ($wdb->isWindowsEnvironment()) {
-    $home = $wdb->getHomeDrivePath() . $wdb->getHomePath();
+if ($wbd->isWindowsEnvironment()) {
+    $home = $wbd->getHomeDrivePath() . $wbd->getHomePath();
 }
 else {
     // ...
@@ -29,7 +29,7 @@ else {
 Get all available paths:
 
 ```php
-$paths = (new WindowsBaseDir\Wdb)->getAllEnvironmentPaths();
+$paths = (new WindowsBaseDir\Wbd)->getAllEnvironmentPaths();
 ```
 
 ```php
@@ -62,7 +62,7 @@ Array
 Alternatively use `getAllPaths` for underscore separated and lowercase keys:
 
 ```php
-$paths = (new WindowsBaseDir\Wdb)->getAllPaths();
+$paths = (new WindowsBaseDir\Wbd)->getAllPaths();
 ```
 
 ```php
