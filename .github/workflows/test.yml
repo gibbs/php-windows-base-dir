@@ -9,42 +9,26 @@ on:
       - 'master'
 
 jobs:
-  phpunit73:
-    name: PHP 7.3 Test
+  unit:
+    name: Unit Test
     runs-on: windows-latest
+    strategy:
+      matrix:
+        php-version: [7.3, 7.4, 8.0, 8.1]
     steps:
       - uses: actions/checkout@v2
-      - uses: shivammathur/setup-php@v2
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.3'
+          php-version: ${{ matrix.php-version }}
           tools: composer:v2
         env:
           phpts: ts
-      - name: Composer Setup
+      - name: Composer Install
         run: |
           rm composer.lock
           composer install
-      - name: PHPUnit Test
-        run: |
-          cp phpunit.dist.xml phpunit.xml
-          .\vendor\bin\phpunit
-
-  phpunit80:
-    name: PHP 8.0 Test
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.0'
-          tools: composer:v2
-        env:
-          phpts: ts
-      - name: Composer Setup
-        run: |
-          rm composer.lock
-          composer install
-      - name: PHPUnit Test
+      - name: Test PHP ${{ matrix.php-version }}
         run: |
           cp phpunit.dist.xml phpunit.xml
           .\vendor\bin\phpunit
