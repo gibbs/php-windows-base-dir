@@ -220,4 +220,9 @@ class WbdTest extends \PHPUnit\Framework\TestCase
 
         $this->assertTrue(strlen($environment) === 3);
     }
+
+    public function testIsWindowsEnvironment(): void
+    {
+        $this->assertIsBool($this->wbd->isWindowsEnvironment());
+    }
 }
